@@ -1,0 +1,34 @@
+Install Vmware
+
+window set up Custom advanced ADVANCED
+
+https://www.youtube.com/watch?v=GILNR2ifxTc&t=18s 
+Steps 
+1,
+Install vmware workstation pro. Download from https://knowledge.broadcom.com/external/article/344595/downloading-vmware-workstation-pro.html
+2, 
+Go to file and choose new virtual machine
+3,
+Choose typical
+4,
+Choose I will install the operating system later 
+ 
+5,
+Choose window and 2019 or 2022 whichever ISO file you downloaded
+6, 
+
+Choose directory to save the VM
+ 7,
+Choose size 35gb
+ 
+Expand custom hardware and choose ram size and on CD choose ISO image and close 
+  
+8,
+Click finish. It is done here. Next is to poweron the VM.
+9,
+Poweron Virtual machine and immediately press enter after CD/DVD is displayed 
+ 
+ 
+
+ 
+https://www.youtube.com/watch?v=GILNR2ifxTc&t=18s
