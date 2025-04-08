@@ -9,7 +9,10 @@ Change IPV4
 New-NetIPAddress -InterfaceAlias "Ethernet0" -IPAddress xx.xx.x.xxx -PrefixLength 24  
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet0" -ServerAddresses ("xxx.xxx.1.xx", "8.8.8.8")
 
-
+To remove (reset or enable DHCP)
+Set-NetIPInterface -InterfaceAlias "Ethernet0" -Dhcp Enabled 
+(the above will suffice)
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet0"  -ResetServerAddresses
 /*
 to check further 
 Get-NetIPAddress -AddressFamily IPv4
