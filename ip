@@ -1,2 +1,8 @@
 netsh interface ipv4 set address name="Ethernet" static xx.xx.x.xx 255.255.255.0
 netsh interface ipv4 set dnsservers name="Ethernet" static [Preferred_DNS_IP]
+
+
+Get-NetIPAddress -AddressFamily IPv4
+New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 192.168.1.100 -PrefixLength 24 -DefaultGateway 192.168.1.1
+Set-NetIPInterface -InterfaceAlias "Ethernet" -Dhcp Enabled
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses ("8.8.8.8", "8.8.4.4")
