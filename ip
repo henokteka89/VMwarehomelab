@@ -1,8 +1,19 @@
-netsh interface ipv4 set address name="Ethernet" static xx.xx.x.xx 255.255.255.0
-netsh interface ipv4 set dnsservers name="Ethernet" static [Preferred_DNS_IP]
+netsh interface ipv4 set address name="Ethernet0" static xx.xx.x.xx 255.255.255.0
+netsh interface ipv4 set dnsservers name="Ethernet0" static [Preferred_DNS_IP]
 
 
+Use powershell
+Get the interfacealias name using Get-NetAdapter - This will show you the name as "Ethernet" or "Ethernet0" use this name in InterfaceAliasabsolu
+
+Change IPV4
+New-NetIPAddress -InterfaceAlias "Ethernet0" -IPAddress xx.xx.x.xxx -PrefixLength 24  
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet0" -ServerAddresses ("xxx.xxx.1.xx", "8.8.8.8")
+
+
+/*
+to check further 
 Get-NetIPAddress -AddressFamily IPv4
-New-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 192.168.1.100 -PrefixLength 24 -DefaultGateway 192.168.1.1
+ 
 Set-NetIPInterface -InterfaceAlias "Ethernet" -Dhcp Enabled
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses ("8.8.8.8", "8.8.4.4")
+*/
