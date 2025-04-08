@@ -3,13 +3,16 @@ netsh interface ipv4 set dnsservers name="Ethernet0" static [Preferred_DNS_IP]
 
 
 Use powershell
-Get the interfacealias name using Get-NetAdapter - This will show you the name as "Ethernet" or "Ethernet0" use this name in InterfaceAliasabsolu
+#Get the interfacealias name using 
+Get-NetAdapter ##This will show you the name as "Ethernet" or "Ethernet0" use this name in InterfaceAliasabsolu
+Get-NetIPAddress -AddressFamily IPv4 #this shows you IPV4 info
 
-Change IPV4
+
+#Change IPV4 and DNS
 New-NetIPAddress -InterfaceAlias "Ethernet0" -IPAddress xx.xx.x.xxx -PrefixLength 24  
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet0" -ServerAddresses ("xxx.xxx.1.xx", "8.8.8.8")
 
-To remove (reset or enable DHCP)
+#To remove (reset or enable DHCP)
 Set-NetIPInterface -InterfaceAlias "Ethernet0" -Dhcp Enabled 
 (the above will suffice)
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet0"  -ResetServerAddresses
