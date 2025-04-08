@@ -1,0 +1,2 @@
+netsh interface ipv4 set address name="Ethernet" static xx.xx.x.xx 255.255.255.0
+netsh interface ipv4 set dnsservers name="Ethernet" static [Preferred_DNS_IP]
