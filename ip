@@ -23,3 +23,7 @@ Get-NetIPAddress -AddressFamily IPv4
 Set-NetIPInterface -InterfaceAlias "Ethernet" -Dhcp Enabled
 Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses ("8.8.8.8", "8.8.4.4")
 */
+
+
+#stress test
+C:\Program Files\Microsoft Corporation\RMLUtils\ostress.exe -E -S"WIN-XXXX\INSTANCEXXX" -Q"SELECT TOP 1000 * INTO #temp FROM sys.all_objects WITH(NOLOCK); DROP table #temp;" -n100 -r100;
